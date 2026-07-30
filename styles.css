@@ -1,0 +1,218 @@
+/* ---------------------------------------------------------------------------
+   Eric Cafritz — works pages
+   Deliberately plain. Ink on warm paper, one restrained accent, a reading
+   serif with no external font dependency, a single narrow measure.
+   The citation block is the one formal object the eye rests on.
+--------------------------------------------------------------------------- */
+
+:root {
+  --paper:  #fdfcf9;   /* barely-warm white */
+  --ink:    #1b1a17;   /* warm near-black   */
+  --muted:  #6c6860;   /* labels, secondary */
+  --rule:   #e2ddd2;   /* hairline          */
+  --accent: #34506b;   /* deep muted blue, links only */
+  --measure: 39rem;
+
+  --serif: "Iowan Old Style", "Palatino Linotype", Palatino,
+           "URW Palladio L", Georgia, "Times New Roman", serif;
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--serif);
+  font-size: 1.125rem;
+  line-height: 1.65;
+  font-kerning: normal;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+.wrap {
+  max-width: var(--measure);
+  margin: 0 auto;
+  padding: 5rem 1.5rem 4rem;
+}
+
+/* --- header ------------------------------------------------------------- */
+
+.masthead {
+  margin-bottom: 3.5rem;
+}
+.masthead .name {
+  font-size: 1rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin: 0;
+  font-weight: 400;
+}
+.masthead a.name-link {
+  color: var(--muted);
+  text-decoration: none;
+}
+.masthead a.name-link:hover { color: var(--ink); }
+
+/* --- eyebrow labels ----------------------------------------------------- */
+
+.eyebrow {
+  font-size: 0.75rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin: 0 0 0.75rem;
+}
+
+/* --- titles ------------------------------------------------------------- */
+
+h1 {
+  font-size: 2rem;
+  line-height: 1.2;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  margin: 0 0 0.4rem;
+}
+h1 .subtitle {
+  display: block;
+  font-size: 1.35rem;
+  font-weight: 400;
+  font-style: italic;
+  color: #3a3833;
+  margin-top: 0.4rem;
+  letter-spacing: 0;
+}
+.byline {
+  font-size: 1.05rem;
+  color: var(--ink);
+  margin: 0 0 2.5rem;
+}
+
+/* --- the citation / metadata block: the signature object --------------- */
+
+.record {
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+  padding: 1.5rem 0;
+  margin: 2.5rem 0;
+}
+.record dl {
+  display: grid;
+  grid-template-columns: 8.5rem 1fr;
+  gap: 0.55rem 1.25rem;
+  margin: 0;
+}
+.record dt {
+  font-size: 0.72rem;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: var(--muted);
+  padding-top: 0.28rem;
+}
+.record dd {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.5;
+  word-break: break-word;
+}
+
+/* --- abstract ----------------------------------------------------------- */
+
+.abstract h2,
+.section h2 {
+  font-size: 0.78rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--muted);
+  font-weight: 400;
+  margin: 2.5rem 0 0.9rem;
+}
+.abstract p { margin: 0 0 1.1rem; }
+
+/* --- links -------------------------------------------------------------- */
+
+a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 2px; }
+a:hover { color: var(--ink); }
+
+.actions {
+  margin: 2.5rem 0 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+.actions a {
+  font-size: 0.95rem;
+  letter-spacing: 0.02em;
+}
+
+/* --- index list of works ------------------------------------------------ */
+
+.works { list-style: none; margin: 0; padding: 0; }
+.works li {
+  border-top: 1px solid var(--rule);
+  padding: 1.75rem 0;
+}
+.works li:last-child { border-bottom: 1px solid var(--rule); }
+.works .work-title {
+  font-size: 1.3rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  margin: 0 0 0.3rem;
+}
+.works .work-title a { color: var(--ink); text-decoration: none; }
+.works .work-title a:hover { color: var(--accent); }
+.works .work-note { margin: 0.3rem 0 0; color: var(--muted); font-size: 1rem; }
+
+.lede {
+  font-size: 1.2rem;
+  line-height: 1.55;
+  margin: 0 0 3rem;
+  color: #33312c;
+}
+
+/* --- footer ------------------------------------------------------------- */
+
+footer {
+  margin-top: 4rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--rule);
+  font-size: 0.85rem;
+  color: var(--muted);
+  line-height: 1.6;
+}
+footer a { color: var(--muted); }
+footer a:hover { color: var(--ink); }
+
+/* --- editing placeholders: visible in browser, remove before publishing - */
+
+.todo {
+  background: #fbeecd;
+  color: #6a4b12;
+  padding: 0.05em 0.35em;
+  border-radius: 2px;
+  font-style: normal;
+}
+
+/* --- accessibility & responsive ---------------------------------------- */
+
+a:focus-visible,
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+@media (max-width: 34rem) {
+  .wrap { padding: 3rem 1.25rem; }
+  h1 { font-size: 1.65rem; }
+  h1 .subtitle { font-size: 1.15rem; }
+  .record dl { grid-template-columns: 1fr; gap: 0.15rem 0; }
+  .record dt { padding-top: 0.9rem; }
+  .record dd { padding-bottom: 0.15rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; }
+}
