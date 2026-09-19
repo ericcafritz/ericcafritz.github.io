@@ -163,7 +163,12 @@ a:hover { color: var(--ink); }
   letter-spacing: -0.01em;
   margin: 0 0 0.3rem;
 }
-.works .work-title a { color: var(--ink); text-decoration: none; }
+diff --git a/styles.css b/styles.css
+--- a/styles.css
++++ b/styles.css
+@@ -179,2 +179,2 @@
+-.works .work-title a { color: var(--ink); text-decoration: none; }
+.works .work-title a { color: var(--ink); text-decoration: underline; text-decoration-color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 4px; }
 .works .work-title a:hover { color: var(--accent); }
 .works .work-note { margin: 0.3rem 0 0; color: var(--muted); font-size: 1rem; }
 
