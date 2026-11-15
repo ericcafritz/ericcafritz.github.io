@@ -219,3 +219,15 @@ a:focus-visible,
 @media (prefers-reduced-motion: reduce) {
   * { animation: none !important; transition: none !important; }
 }
+
+.announcement {
+  margin: 0 0 2.5rem;
+  padding: 1rem 1.25rem;
+  background: #f0eee7;
+  border-left: 3px solid var(--accent);
+}
+
+.announcement time {
+  font-size: 0.9rem;
+  color: var(--muted);
+}
